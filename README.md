@@ -1,2 +1,2 @@
 # dataquest
-All code from dataquest program
+All code and analysis from dataquest program
