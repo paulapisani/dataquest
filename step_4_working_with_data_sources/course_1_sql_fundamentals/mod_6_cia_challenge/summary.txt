@@ -1,0 +1,7 @@
+- Can look through log of sqlite tables from connection
+- E.g. select * from sqlite_master where type='table'
+- When working in Jupyter, can use pandas to read SQL query results directly into df
+- E.g. pd.read_sql_query(query, conn)
+- Pandas vs. SQLite can be tough call
+- Most data anlaysts / data scientists use SQL based GUI
+- This allows you to write / save queries, run against multiple dbs, return results as table, and visualize
