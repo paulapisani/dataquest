@@ -1,0 +1,49 @@
+### 1 of 12
+- Can use SQL in Python via SQLite
+- SQLite is db that doesn't require standalone server
+- Full db stored as file on disk
+- Ideal for larger data sets that can fit on disk but not memory
+- Pandas loads dataset into memory so SQLite is good option for datasets > 8GB (~amount of memory on comp)
+- Also easy to share since entire db is on single file
+- Can interact via SQLite shell or sqlite3 Python module
+ 
+### 2 of 12
+- Python 2.5+ comes with sqlite module preinstalled
+- Need to import into environment
+- Connect to db with connect() function - needs db as parameter
+- Database we're working with exists as file, so we need to pass in file name
+- Connect() returns connection instance 
+- After connecting to database, SQLite locks database file and prevents other processes from connecting
+- This decision was made to keep db lightweight and avoid complexity of concurrency
+
+### 4 of 12
+- Need to express SQL query as string
+- Connection class used to represent db we're working with
+- Cursor class needed to: 
+	- Run query against db, 
+	- Parse results from db
+	- Convert to native Python objects
+	- Store the results within Cursor instance as local variable
+- Cursor runs query and converts result to list of tubles - then stores list as local variable
+
+### 5 of 12
+- tuple is core python data structure
+- tuple is immutable (can't modify existing
+- Create with () --> t = ()
+- Have same indexing as lists (0 indexed with brackets), but are faster
+
+### 6 of 12
+- Create cursor from connection object - conn.cursor()
+- Cursor object can then execute sql statement
+- Cursor fetchall grabs all results
+
+### 7 of 12 
+- Don't actually need to create cursor directly
+- Connection object can do this for us 
+- Ex. conn.execute(query).fetchall()
+
+### 9 of 12
+- Need to close connection once we're done
+- That lets other processes connect
+- Important when working with other teammates
+- Can no longer query after connection closes
